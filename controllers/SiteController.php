@@ -109,4 +109,23 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionHome(){
+        $postModel = new \app\Models\Posts;
+        $posts = $postModel->find()
+                            ->where(['user_id' => \Yii::$app->user->identity->id])
+                            ->orderBy('posttime desc')
+                            ->all();
+
+        $postString = '';
+        foreach ($posts as $post) {
+            $postString .= $this->renderPartial('/post/individual_post', [
+                'post' => $post->attributes
+            ]);
+        }
+
+        return $this->render('home', [
+            'postString' => $postString
+        ]);
+    }
 }
