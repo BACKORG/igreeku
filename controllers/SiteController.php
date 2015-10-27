@@ -60,7 +60,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            $this->redirect('home');
+            $this->redirect('profile');
         }
 
         return $this->render('login', [
@@ -110,7 +110,7 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionHome(){
+    public function actionProfile(){
         $postModel = new \app\Models\Posts;
         $posts = $postModel->find()
                             ->where(['user_id' => \Yii::$app->user->identity->id])
@@ -124,7 +124,7 @@ class SiteController extends Controller
             ]);
         }
 
-        return $this->render('home', [
+        return $this->render('profile', [
             'postString' => $postString
         ]);
     }

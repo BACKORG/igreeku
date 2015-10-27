@@ -56,6 +56,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'email' => 'Email',
             'password' => 'Password',
             'password_repeat' => 'Password Confirm',
+            'profile_image' => 'Profile Image',
             'college_id' => 'College ID',
         ];
     }

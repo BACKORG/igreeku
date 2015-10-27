@@ -96,7 +96,44 @@ a.desc:after {
 
 .left-side{
     border:1px solid #ccc;
-    height: 200px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+
+    .ls-1{
+        img{
+
+            height: 150px;
+            width: 100%;
+        }
+    }
+
+    .ls-2{
+        text-align: center;
+        
+        img{
+            height: 100px;
+            width: 100px;
+            margin-top: -40px;
+        }
+    }
+
+    .ls-3{
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .edit-profile{
+        font-size: 11px;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 10px;
+
+        a{
+            text-decoration: none;
+        }
+    }
 }
 
 
