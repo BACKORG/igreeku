@@ -16,6 +16,12 @@ use Yii;
  */
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
+    const SCENARIO_DEFAULT = 'default';
+    const SCENARIO_LOGIN = 'login';
+    const SCENARIO_REGISTER = 'register';
+    const SCENARIO_UPDATE = 'update';
+
+
     public $password_repeat;
 
     public $username;
@@ -26,6 +32,16 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public static function tableName()
     {
         return 'user';
+    }
+
+    public function scenarios()
+    {
+        return [
+            self::SCENARIO_DEFAULT => ['firstname', 'lastname', 'email', 'password', 'profile_image', 'college_id'],
+            self::SCENARIO_LOGIN => ['email', 'password'],
+            self::SCENARIO_REGISTER => ['firstname', 'lastname', 'email', 'password', 'password_repeat'],
+            self::SCENARIO_UPDATE => ['firstname', 'lastname', 'email', 'profile_image', 'college_id']
+        ];
     }
 
     /**

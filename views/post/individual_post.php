@@ -1,6 +1,6 @@
 <div class="individual_post clearfix">
     <div class="col-md-2">
-        <img src="<?=!empty($post['profile_image'])?$post['profile_image']:'/images/default-profile-image.png'?>" class="img-circle" width=48 height=48>
+        <img src="<?=empty(\Yii::$app->user->identity->profile_image)?'/images/default-profile-image.png':\Yii::$app->user->identity->profile_image;?>" class="img-circle" width=48 height=48>
     </div>
 
     <div class="col-md-10">

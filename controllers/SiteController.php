@@ -94,7 +94,7 @@ class SiteController extends Controller
     }
 
     public function actionSignup(){
-        $model = new \app\models\User;
+        $model = new \app\models\User(['scenario' => \app\models\User::SCENARIO_REGISTER]);
 
         if ( $model->load(Yii::$app->request->post()) ) {
 

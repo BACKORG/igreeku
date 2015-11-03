@@ -95,7 +95,8 @@ a.desc:after {
 }
 
 .left-side{
-    border:1px solid #ccc;
+    padding: 0;
+    background-color: #fff;
     padding-bottom: 30px;
     border-radius: 5px;
 
@@ -138,7 +139,6 @@ a.desc:after {
 
 
 .right-side{
-    border:1px solid #ccc;
     height: 200px;
 }
 
