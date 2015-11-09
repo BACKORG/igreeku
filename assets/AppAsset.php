@@ -19,7 +19,7 @@ class AppAsset extends AssetBundle
         'css/font-awesome.css'
     ];
     public $js = [
-        
+        'js/home.js'
     ];
     public $depends = [
     ];
