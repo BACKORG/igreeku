@@ -32,6 +32,7 @@ class JobController extends \yii\web\Controller
         $model = new \app\Models\Jobs();
 
         $data = $model::find()
+            ->orderBy('id desc')
             ->all();
 
         return $this->render('list', [

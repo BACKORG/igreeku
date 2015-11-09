@@ -132,4 +132,12 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public static function findIdentityByAccessToken($token, $type = null){
         throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
+
+    public function getPosts(){
+       return $this->hasMany(Posts::className(), ['user_id' => 'id']);
+   }
+
+    public function getJobs(){
+       return $this->hasMany(Jobs::className(), ['user_id' => 'id']);
+   }
 }

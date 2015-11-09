@@ -40,8 +40,13 @@
 
 	<div class="col-md-3 clearfix">
 		<div class="right-side clearfix">
+      <div class="well clearfix" style="background-color:#fff;">
+          <h5 class="ald"><i class="fa fa-globe"></i> User Feeds</h5>
+          <a href="/post/all" class="btn btn-primary">Get All Feeds</a>
+      </div>
+
 			<div class="well" style="background-color:#fff;">
-				<h5 class="ald">Sponsored</h5>
+				<h5 class="ald"><i class="fa fa-users"></i> Sponsored</h5>
 				<div>
 					<img class="img-thumbnail"  src="/images/instagram_2.jpg" style="width:100%;">
 				</div>
@@ -54,11 +59,6 @@
 				</p>
 				<a href="http://linkedin.com" target="_blank" class="btn btn-primary">Link</a>
 			</div>
-
-            <div class="well clearfix" style="background-color:#fff;">
-                <h5 class="ald">News Feed</h5>
-                <a href="/post/all">Get All News Feed</a>
-            </div>
 		</div>
 	</div>
 </div>

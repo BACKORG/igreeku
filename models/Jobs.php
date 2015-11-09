@@ -65,4 +65,12 @@ class Jobs extends \yii\db\ActiveRecord
             'end_datetime' => 'End Datetime',
         ];
     }
+
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser(){
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
 }

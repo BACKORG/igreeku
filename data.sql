@@ -30,7 +30,7 @@ CREATE TABLE `jobs` (
   `start_datetime` datetime DEFAULT NULL,
   `end_datetime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `jobs` (
 
 LOCK TABLES `jobs` WRITE;
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-INSERT INTO `jobs` VALUES (2,NULL,'21312','3213','2012-10-22 00:00:00','2012-10-22 00:00:00'),(3,NULL,'21312','3213','2012-10-22 00:00:00','2012-10-22 00:00:00'),(4,10,'21312','3213','2012-10-22 00:00:00','2012-10-22 00:00:00'),(5,10,'21312','3213','2012-10-22 00:00:00','2012-10-22 00:00:00'),(6,10,'21312','3213as\r\nasd\r\nasd\r\n\r\nasd\r\nas\r\nddas','2012-10-22 00:00:00','2012-10-22 00:00:00'),(7,10,'21312','123123123123232213','2012-10-22 00:00:00','2012-10-22 00:00:00'),(8,10,'123','213',NULL,NULL),(9,10,'1233333333333','213','2012-10-22 00:00:00','2012-10-22 00:00:00'),(10,10,'1233333333333','213','2012-10-22 00:00:00','2012-10-22 00:00:00'),(11,10,'123','213231','2012-10-22 00:00:00','2012-10-22 00:00:00');
+INSERT INTO `jobs` VALUES (1,10,'This is a job post 1','This is a job post 1','2015-11-01 00:00:00','2015-11-20 00:00:00'),(2,10,'This is a new job lol','This is a new job lol','2015-11-01 00:00:00','2015-11-20 00:00:00');
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +58,7 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`id`),
   KEY `post_user_id_idx` (`user_id`),
   CONSTRAINT `post_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,NULL,NULL,NULL),(2,9,'wwwawawwaaw','2015-10-27 00:15:27'),(3,9,'wwwawawwaaw','2015-10-27 00:17:46'),(4,9,'wwwawawwaaw','2015-10-27 00:18:18'),(5,9,'21321321','2015-10-27 00:18:25'),(6,9,'21321321','2015-10-27 00:18:30'),(7,9,'21321321','2015-10-27 00:18:37'),(8,9,'21321321','2015-10-27 00:18:46'),(9,9,'21321321','2015-10-27 00:18:54'),(10,9,'21321321','2015-10-27 00:20:03'),(11,9,'21321321','2015-10-27 00:20:56'),(12,9,'21321321','2015-10-27 00:21:07'),(13,9,'shreya','2015-10-27 00:22:59'),(14,9,'asd as as d','2015-10-27 00:23:02'),(15,9,'asd as asd sa das asd ','2015-10-27 00:23:05'),(16,9,'asd as sasa sad ','2015-10-27 00:23:09'),(17,9,'asd ','2015-10-27 00:26:21'),(18,9,' asd asd ','2015-10-27 00:26:23'),(19,9,'s dsa asd ','2015-10-27 00:26:24'),(20,9,'sa dasd as ','2015-10-27 00:26:26'),(21,9,'s das das s','2015-10-27 00:26:27'),(22,9,'asdasd','2015-10-27 00:26:49'),(23,9,'asdsad','2015-10-27 00:26:51'),(24,9,'asdasd','2015-10-27 00:26:52'),(25,9,'asd','2015-10-27 00:27:17'),(26,9,'as as d','2015-10-27 00:27:18'),(27,9,'as das das ','2015-10-27 00:27:20'),(28,9,'sad as asd ','2015-10-27 00:27:21'),(29,9,'sad sa das ','2015-10-27 00:27:23'),(30,9,'sad as d','2015-10-27 00:28:48'),(31,9,'sa dsa ','2015-10-27 00:28:50'),(32,9,'as das ','2015-10-27 00:28:51'),(33,9,'as das ','2015-10-27 00:28:53'),(34,9,'asd as sa sad ','2015-10-27 00:28:55'),(35,9,'Model implements the following commonly used features:\n\nattribute declaration: by default, every public class member is considered as a model attribute\nattribute labels: each attribute may be associated with a label for display purpose\nmassive attribute assignment\nscenario-based validation\nModel also raises the following events when performing data validation:','2015-10-27 00:29:11'),(36,9,'Model implements the following commonly used features:\n\nattribute declaration: by default, every public class member is considered as a model attribute\nattribute labels: each attribute may be associated with a label for display purpose\nmassive attribute assignment\nscenario-based validation\nModel also raises the following events when performing data validation:','2015-10-27 00:29:48'),(37,9,'Model implements the following commonly used features:\n\nattribute declaration: by default, every public class member is considered as a model attribute\nattribute labels: each attribute may be associated with a label for display purpose\nmassive attribute assignment\nscenario-based validation\nModel also raises the following events when performing data validation:','2015-10-27 00:29:49'),(38,9,'Model implements the following commonly used features:\n\nattribute declaration: by default, every public class member is considered as a model attribute\nattribute labels: each attribute may be associated with a label for display purpose\nmassive attribute assignment\nscenario-based validation\nModel also raises the following events when performing data validation:','2015-10-27 00:29:51'),(39,9,'hello shreya','2015-10-27 00:39:50'),(40,9,'adsasdds\nasdasd\nsadsadsad\nsdfd\nfdsf\nsdf\nsdf','2015-10-27 01:32:41'),(41,9,'Job Location : Shivajinagar \n\nWalkin Date : 28 October 2015 - 29 October 2015 \n\nWalkin Time : 11:00 a.m - 03:00 p.m \n\nJob Description : \n\nJob Profile:\nFacilitators (Trainers) - Roles & Responsibilities\n\n1. TRAINING: Training and facilitating the learning process of the candidates by delivering the course curriculum and helping them to acquire necessary employability skills\n\n2. MOBILISATION: Actively participate in the road shows to mobilize deserving aspirants for the LABS program. You will counsel and admit them in the training program as per laid procedures.\n\n3. PLACEMENTS: Network by inviting representatives from the prospective employers to the centers and taking the aspirants for industry exposure visits for better understanding about the industry. After training the aspirants and ensuring they are job-ready, you will work to secure good employment opportunities for them with prospective employers. \n\nWalkin Venue : \n\nDr.reddys Foundation, \nAbove Manapuram Gold, \nNear Dandu Maramma temple, \nChik Bazar Street, Shivajunagara Bus Stop, \nBengalure-560051\n','2015-10-27 01:33:49'),(42,9,'gghhjjj','2015-10-27 01:41:00'),(43,9,'dasadsadas','2015-10-27 01:44:58'),(44,9,'Hello yuri','2015-11-03 02:20:51'),(45,9,'hello standy','2015-11-03 02:20:59'),(46,9,'qweqweqwe','2015-11-03 02:32:23'),(47,9,'POst now asdasdasd','2015-11-03 02:32:28'),(48,9,'123213231','2015-11-09 01:20:14'),(49,9,'adssadasd','2015-11-09 01:20:17'),(50,9,'asdasdsda','2015-11-09 01:20:18'),(51,9,'sadsadsad','2015-11-09 01:20:20'),(52,10,'asdasd','2015-11-09 01:46:06'),(53,10,'asddas','2015-11-09 01:46:08'),(54,10,'123123','2015-11-09 01:56:33');
+INSERT INTO `posts` VALUES (1,10,'LOL This is my first post','2015-11-10 00:36:41'),(2,10,'LOL This is my second post','2015-11-10 00:36:51'),(3,10,'This is my third post','2015-11-09 18:38:24'),(4,9,'This is my first post','2015-11-09 18:43:19'),(5,9,'this is my second post','2015-11-09 18:43:25'),(6,9,'this is my third post','2015-11-09 18:43:30');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (7,'123','123','123@qq.com','202cb962ac59075b964b07152d234b70',NULL,3333,0),(8,'yuri','yuri','yuri@gmail.com','9491876179d7a80bb5c86f15dbe31422',NULL,122,0),(9,'Client1','Client2','zzz@qq.com','f3abb86bd34cf4d52698f14c0da1dc60','http://www.blogcdn.com/massively.joystiq.com/media/2012/08/lol-tristanach.jpg',1222,0),(10,'alumni','test','alumni@gmail.com','9855f5cdff0306ae33a49f89e087ccbc',NULL,NULL,1);
+INSERT INTO `user` VALUES (7,'123','123','123@qq.com','202cb962ac59075b964b07152d234b70',NULL,3333,0),(8,'yuri','yuri','yuri@gmail.com','9491876179d7a80bb5c86f15dbe31422',NULL,122,0),(9,'Client1','Client2','zzz@qq.com','f3abb86bd34cf4d52698f14c0da1dc60','http://www.blogcdn.com/massively.joystiq.com/media/2012/08/lol-tristanach.jpg',1222,0),(10,'alumni','test','alumni@gmail.com','9855f5cdff0306ae33a49f89e087ccbc','http://files.enjin.com.s3.amazonaws.com/59227/modules/forum/attachments/fatty+baby_1337765638.jpg',12,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -110,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-08 20:38:08
+-- Dump completed on 2015-11-09 18:48:31

@@ -12,6 +12,13 @@ $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
+    <div id="map-canvas" style="height:500px;"></div>
+    <div id="save-widget" style="background-color: #fff;border: 1px solid #ccc;padding: 20px;opacity: 0.7;">
+       <strong>Fairfield, Connecticut, USA</strong>
+       <p>Ya.. This is my university.</p>
+     </div>
+
+
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
@@ -66,3 +73,42 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php endif; ?>
 </div>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<script>
+    function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var myLatLng = new google.maps.LatLng(41.1748854, -73.3481579);
+        var mapOptions = {
+            center: myLatLng,
+            zoom: 10,
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+            map: map,
+            // Define the place with a location, and a query string.
+            place: {
+                location: myLatLng,
+                query: 'Google, Fairfield, Connecticut, USA'
+            },
+        });
+        // Create a new SaveWidgetOptions object for Google Sydney.
+        var saveWidgetOptions = {
+            place: {
+                placeId: 'ChIJC7zHsmShwokRbrc0nIuGQ4c',
+                location: myLatLng
+            },
+            attribution: {
+                source: 'Google Maps JavaScript API',
+                webUrl: 'https://developers.google.com/maps/'
+            }
+        };
+        var widgetDiv = document.getElementById('save-widget');
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(widgetDiv);
+        // Append a Save Control to the existing save-widget div.
+        saveWidget = new google.maps.SaveWidget(widgetDiv, saveWidgetOptions);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
