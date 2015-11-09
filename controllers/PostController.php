@@ -26,4 +26,16 @@ class PostController extends \yii\web\Controller
         ]);
     }
 
+    public function actionAll(){
+        $user_id = \Yii::$app->user->identity->id;
+        $postModel = new \app\Models\Posts;
+
+        $posts = $postModel->find()
+                            ->orderBy('posttime desc')
+                            ->all();
+
+        return $this->render('all',[
+            'posts' => $posts,
+        ]);
+    }
 }

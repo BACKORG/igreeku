@@ -25,12 +25,6 @@ class SiteController extends Controller
                     ],
                 ],
             ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
         ];
     }
 
@@ -111,6 +105,7 @@ class SiteController extends Controller
     }
 
     public function actionProfile(){
+        $user_id = \Yii::$app->user->identity->id;
         $postModel = new \app\Models\Posts;
         $posts = $postModel->find()
                             ->where(['user_id' => \Yii::$app->user->identity->id])
@@ -124,8 +119,21 @@ class SiteController extends Controller
             ]);
         }
 
+        $Jobmodel = new \app\Models\Jobs();
+
+        if ( Yii::$app->request->post() ) {
+            $data = Yii::$app->request->post();
+            $data['Jobs']['user_id'] = $user_id;
+            $Jobmodel->setAttributes( $data['Jobs'] );
+            $Jobmodel->save();
+
+            $this->redirect('/job/list');
+        }
+ 
+
         return $this->render('profile', [
-            'postString' => $postString
+            'postString' => $postString,
+            'Jobmodel' => $Jobmodel
         ]);
     }
 }

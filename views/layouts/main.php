@@ -38,7 +38,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],         
             Yii::$app->user->isGuest ? '' : ['label' => 'Profile', 'url' => ['/site/profile']],
-            Yii::$app->user->isGuest ? '' : ['label' => 'Job Posting', 'url' => ['/job/post']],
+            Yii::$app->user->isGuest ? '' : ['label' => 'Job List', 'url' => ['/job/list']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ?
