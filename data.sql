@@ -87,8 +87,12 @@ CREATE TABLE `user` (
   `profile_image` varchar(255) DEFAULT NULL,
   `college_id` int(11) DEFAULT NULL,
   `type` tinyint(3) DEFAULT '0' COMMENT '0 = basic user,\n1 = alumni user,\n2 = admin,\n3 = super admin',
+  `state` varchar(45) DEFAULT NULL,
+  `school` varchar(45) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `why` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +101,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (7,'123','123','123@qq.com','202cb962ac59075b964b07152d234b70',NULL,3333,0),(8,'yuri','yuri','yuri@gmail.com','9491876179d7a80bb5c86f15dbe31422',NULL,122,0),(9,'Client1','Client2','zzz@qq.com','f3abb86bd34cf4d52698f14c0da1dc60','http://www.blogcdn.com/massively.joystiq.com/media/2012/08/lol-tristanach.jpg',1222,0),(10,'alumni','test','alumni@gmail.com','9855f5cdff0306ae33a49f89e087ccbc','http://files.enjin.com.s3.amazonaws.com/59227/modules/forum/attachments/fatty+baby_1337765638.jpg',12,1);
+INSERT INTO `user` VALUES (7,'123','123','123@qq.com','202cb962ac59075b964b07152d234b70',NULL,3333,0,NULL,NULL,NULL,NULL),(8,'yuri','yuri','yuri@gmail.com','9491876179d7a80bb5c86f15dbe31422',NULL,122,0,NULL,NULL,NULL,NULL),(9,'Client1','Client2','zzz@qq.com','f3abb86bd34cf4d52698f14c0da1dc60','http://www.blogcdn.com/massively.joystiq.com/media/2012/08/lol-tristanach.jpg',1222,0,NULL,NULL,NULL,NULL),(10,'alumni','test','alumni@gmail.com','9855f5cdff0306ae33a49f89e087ccbc','http://files.enjin.com.s3.amazonaws.com/59227/modules/forum/attachments/fatty+baby_1337765638.jpg',12,1,NULL,NULL,NULL,NULL),(13,'admin','admin','admin@gmail.com','21232f297a57a5a743894a0e4a801fc3',NULL,NULL,3,'ct','yu','2015-11-23','Becaue');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -110,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-09 18:48:31
+-- Dump completed on 2015-11-23 19:40:25
