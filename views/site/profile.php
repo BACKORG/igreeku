@@ -39,7 +39,7 @@
 		<div class="right-side clearfix">
 
 			<?php if(Yii::$app->user->identity->type == 3){ ?>
-		  	<div class="well clearfix" style="background-color:#fff;">
+		  	<div class="well clearfix">
 			  	<h5 class="ald"><i class="fa fa-cog"></i> IGreekU Admin</h5>
 			  	<ul>
 			  		<li>
@@ -48,19 +48,16 @@
 			  		<li>
 			  			<a href="/user/all">Manage Posts</a>
 			  		</li>
-			  		<li>
-			  			<a href="/user/all">Manage Chapters</a>
-			  		</li>
 			  	</ul>
 		  	</div>
 		  	<?php }?>
 
-		  	<div class="well clearfix" style="background-color:#fff;">
+		  	<div class="well clearfix">
 			  	<h5 class="ald"><i class="fa fa-globe"></i> User Feeds</h5>
 			  	<a href="/post/all" class="btn btn-primary">Get All Feeds</a>
 		  	</div>
 
-			<div class="well" style="background-color:#fff;">
+			<div class="well">
 				<h5 class="ald"><i class="fa fa-users"></i> Sponsored</h5>
 				<div>
 					<img class="img-thumbnail"  src="/images/instagram_2.jpg" style="width:100%;">
