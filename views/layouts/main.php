@@ -41,17 +41,14 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],         
-            Yii::$app->user->isGuest ? '' : ['label' => 'Profile', 'url' => ['/site/profile']],
+            Yii::$app->user->isGuest ? '' : ['label' => 'MyGreek', 'url' => ['/site/profile']],
             Yii::$app->user->isGuest ? '' : ['label' => 'Job List', 'url' => ['/job/list']],
-            ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->firstname . ' ' . Yii::$app->user->identity->lastname. ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ],
+                    'url' => ['/site/logout']                ],
         ],
     ]);
     NavBar::end();
@@ -65,11 +62,30 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+<footer class="clearfix">
+    <div class="col-md-4 col-xs-12 text-center">
+        <small>© registered 501(c) 3 by IGreekU</small>
+    </div>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+    <div class="col-md-4 col-xs-12 text-center footer-mid">
+        <small>Office Location: Fairfield Ave, CT</small>
+        <small>Phone: 203-988-8990</small>
+        <small>Email: <a href="mailto:mail@qq.com">mail@gmail.com</a></small>
+    </div>
+    
+    <div class="col-md-4 col-xs-12 text-center footer-social">
+        <a href="http://www.facebook.com/" target="_blank">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a href="http://twitter.com/" target="_blank">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="http://instagram.com/" target="_blank">
+            <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://plus.google.com/" target="_blank">
+            <i class="fa fa-google-plus"></i>
+        </a>
     </div>
 </footer>
 

@@ -37,10 +37,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function scenarios()
     {
         return [
-            self::SCENARIO_DEFAULT => ['firstname', 'lastname', 'email', 'password', 'profile_image', 'college_id'],
+            self::SCENARIO_DEFAULT => ['firstname', 'lastname', 'email', 'password', 'profile_image', 'college_id', 'state', 'school', 'dob', 'why'],
             self::SCENARIO_LOGIN => ['email', 'password'],
-            self::SCENARIO_REGISTER => ['firstname', 'lastname', 'email', 'password', 'password_repeat'],
-            self::SCENARIO_UPDATE => ['firstname', 'lastname', 'email', 'profile_image', 'college_id']
+            self::SCENARIO_REGISTER => ['firstname', 'lastname', 'email', 'password', 'password_repeat', 'state', 'school'],
+            self::SCENARIO_UPDATE => ['firstname', 'lastname', 'state', 'school', 'dob', 'why']
         ];
     }
 
@@ -51,9 +51,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return [
             [['college_id'], 'integer'],
-            [['college_id', 'firstname', 'lastname', 'email', 'password'], 'required'],
+            [['firstname', 'lastname', 'email', 'password'], 'required'],
             [['email'], 'email'],
             [['firstname', 'lastname', 'email'], 'string', 'max' => 100],
+            [['state', 'school'], 'string', 'max' => 45],
             [['password'], 'string', 'max' => 50],
             ['password_repeat', 'required'],
             ['password_repeat', 'compare', 'compareAttribute' => 'password'],
@@ -74,6 +75,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'password_repeat' => 'Password Confirm',
             'profile_image' => 'Profile Image',
             'college_id' => 'College ID',
+            'state' => 'State',
+            'school' => 'School',
+            'dob' => 'Date Of Birth',
+            'why' => 'Why IGreekU'
         ];
     }
 

@@ -34,7 +34,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'password_repeat')->passwordInput() ?>
 
-        <?= $form->field($model, 'college_id') ?>
+        <?= $form->field($model, 'state')->dropDownList([
+            'ct' => 'CT'
+        ]) ?>
+
+         <?= $form->field($model, 'school')->dropDownList([
+            'fu' => 'Fairfield University',
+            'yu' => 'Yale University',
+            'ub' => 'University of Bridgeport'
+        ]) ?>
 
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-12">

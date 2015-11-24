@@ -14,14 +14,12 @@ class ProfileController extends \yii\web\Controller
                     ->where(['id' => $user_id])
                     ->one();
 
+
         if ( Yii::$app->request->post() ) {
             $data = Yii::$app->request->post();
             $profile->setAttributes( $data['User'] );
             $profile->save();
         }
-
-
-  
 
         return $this->render('edit', [
             'model' => $profile
