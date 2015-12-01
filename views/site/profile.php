@@ -46,7 +46,7 @@
 			  			<a href="/user/all">Manage Users</a>
 			  		</li>
 			  		<li>
-			  			<a href="/user/all">Manage Posts</a>
+			  			<a href="/post/posts">Manage Posts</a>
 			  		</li>
 			  	</ul>
 		  	</div>

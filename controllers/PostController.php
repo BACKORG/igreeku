@@ -1,6 +1,9 @@
 <?php
 
 namespace app\controllers;
+use yii\data\Pagination;
+use yii\data\ActiveDataProvider;
+
 
 class PostController extends \yii\web\Controller
 {
@@ -36,6 +39,20 @@ class PostController extends \yii\web\Controller
 
         return $this->render('all',[
             'posts' => $posts,
+        ]);
+    }
+
+
+     public function actionPosts(){
+        $dataProvider = new ActiveDataProvider([
+            'query' => \app\Models\Posts::find(),
+            'pagination' => [
+                'pageSize' => 3,
+            ],
+        ]);
+
+        return $this->render('posts', [
+            'dataProvider' => $dataProvider,
         ]);
     }
 }
