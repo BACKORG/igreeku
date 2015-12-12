@@ -6,7 +6,7 @@
 			</div>
 
 			<div class="ls-2">
-				 <img src="<?=empty(\Yii::$app->user->identity->profile_image)?'/images/default-profile-image.png':\Yii::$app->user->identity->profile_image;?>" class="img-circle img-thumbnail">
+				 <img src="<?=empty(\Yii::$app->user->identity->profile_image)?'/images/default-profile-image.png' : '/uploads/'.\Yii::$app->user->identity->profile_image;?>" class="img-circle img-thumbnail">
 			</div>
 
 			<div class="ls-3">
@@ -111,9 +111,21 @@
 
 					<?= $form->field($Jobmodel, 'description')->textArea(['rows' => '6']) ?>
 
-					<?= $form->field($Jobmodel, 'start_datetime')->textInput(array('placeholder' => 'Start datetime yyyy-mm-dd'));  ?>
+					<div class="form-group">
+					    <label class="col-lg-3 control-label">Job Posted On:</label>
+					    <div class="col-lg-8">
+					        <input type="date" value="<?=date('Y-m-d')?>" class="form-control" name="Jobs[start_datetime]">
+					    </div>
+					</div>
 
-					<?= $form->field($Jobmodel, 'end_datetime')->textInput(array('placeholder' => 'End datetime yyyy-mm-dd'));  ?>
+
+					<div class="form-group">
+					    <label class="col-lg-3 control-label">Last date to apply:</label>
+					    <div class="col-lg-8">
+					        <input type="date" value="<?=date('Y-m-d')?>" class="form-control" name="Jobs[end_datetime]">
+					    </div>
+					</div>
+
 
 					<div class="form-group">
 						<div class="col-lg-offset-3 col-lg-12">

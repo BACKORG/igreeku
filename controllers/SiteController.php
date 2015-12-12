@@ -43,7 +43,10 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new ContactForm();
+        return $this->render('index',  [
+            'model' => $model,
+        ]);
     }
 
     public function actionLogin()
@@ -77,6 +80,7 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
+
         return $this->render('contact', [
             'model' => $model,
         ]);
@@ -134,6 +138,23 @@ class SiteController extends Controller
         return $this->render('profile', [
             'postString' => $postString,
             'Jobmodel' => $Jobmodel
+        ]);
+    }
+
+    public function actionForgot(){
+        return $this->render('forgot');
+    }
+
+    public function actionChapter(){
+        $school_id = Yii::$app->request->post('school_id');
+        
+        $model = new \app\Models\Chapter;
+        $chapter = $model->find()
+                        ->where(['school_id' => $school_id])
+                        ->all();
+
+        return $this->renderPartial('chapter',[
+            'chapters' => $chapter
         ]);
     }
 }

@@ -20,6 +20,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     const SCENARIO_LOGIN = 'login';
     const SCENARIO_REGISTER = 'register';
     const SCENARIO_UPDATE = 'update';
+    const SCENARIO_ADMIN_UPDATE = 'admin_update';
 
 
     public $password_repeat;
@@ -37,10 +38,11 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function scenarios()
     {
         return [
-            self::SCENARIO_DEFAULT => ['firstname', 'lastname', 'email', 'password', 'profile_image', 'college_id', 'state', 'school', 'dob', 'why'],
+            self::SCENARIO_DEFAULT => ['firstname', 'lastname', 'email', 'password', 'profile_image', 'college_id', 'state', 'school', 'dob', 'why', 'chapter'],
             self::SCENARIO_LOGIN => ['email', 'password'],
-            self::SCENARIO_REGISTER => ['firstname', 'lastname', 'email', 'password', 'password_repeat', 'state', 'school'],
-            self::SCENARIO_UPDATE => ['firstname', 'lastname', 'state', 'school', 'dob', 'why']
+            self::SCENARIO_REGISTER => ['firstname', 'lastname', 'email', 'password', 'password_repeat', 'chapter', 'school'],
+            self::SCENARIO_UPDATE => ['firstname', 'lastname', 'state', 'school', 'dob', 'why'],
+            self::SCENARIO_ADMIN_UPDATE => ['firstname', 'lastname', 'email', 'school', 'dob', 'why', 'type']
         ];
     }
 
@@ -50,7 +52,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['college_id'], 'integer'],
+            [['college_id', 'chapter', 'type'], 'integer'],
             [['firstname', 'lastname', 'email', 'password'], 'required'],
             [['email'], 'email'],
             [['firstname', 'lastname', 'email'], 'string', 'max' => 100],
@@ -78,7 +80,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'state' => 'State',
             'school' => 'School',
             'dob' => 'Date Of Birth',
-            'why' => 'Why IGreekU'
+            'why' => 'Why IGreekU',
+            'type' => 'User Type'
         ];
     }
 

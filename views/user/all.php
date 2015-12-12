@@ -1,5 +1,7 @@
 <?php
 use yii\grid\GridView;
+use yii\grid\ActionColumn;
+
 ?>
 
 <div class="row">  
@@ -11,8 +13,34 @@ use yii\grid\GridView;
             'firstname',
             'lastname',
             'email',
-            'type',
-            'dob'
+            [
+                'attribute'=>'type',
+                'format' => 'text',
+                'label' => 'User Type',
+                'value' => function($model, $key, $index, $column){
+                    switch ($model->type) {
+                        case '0':
+                            return 'Basic User';
+                        break;
+
+                        case '1':
+                            return 'Alumni User';
+                        break;
+
+                        case '2':
+                            return 'Admin User';
+                        break;
+                        
+                        default:
+                            return 'Super Admin';
+                        break;
+                    }
+                }   
+            ],
+            'dob',
+            [
+                'class' => ActionColumn::className(),
+            ]
         ],
     ]);
     ?>

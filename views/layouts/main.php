@@ -43,7 +43,6 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],         
             Yii::$app->user->isGuest ? '' : ['label' => 'MyGreek', 'url' => ['/site/profile']],
             Yii::$app->user->isGuest ? '' : ['label' => 'Job List', 'url' => ['/job/list']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
                 [
@@ -68,7 +67,7 @@ AppAsset::register($this);
     </div>
 
     <div class="col-md-4 col-xs-12 text-center footer-mid">
-        <small>Office Location: Fairfield Ave, CT</small>
+        <small>Office Location: 6126 Lincolhn Avenue Morton Grove, IL 60053</small>
         <small>Phone: 203-988-8990</small>
         <small>Email: <a href="mailto:mail@qq.com">mail@gmail.com</a></small>
     </div>

@@ -6,7 +6,7 @@
             </div>
 
             <div class="ls-2">
-                 <img src="<?=empty(\Yii::$app->user->identity->profile_image)?'/images/default-profile-image.png':\Yii::$app->user->identity->profile_image;?>" class="img-circle img-thumbnail">
+                 <img src="<?=empty(\Yii::$app->user->identity->profile_image)?'/images/default-profile-image.png' : '/uploads/'.\Yii::$app->user->identity->profile_image;?>" class="img-circle img-thumbnail">
             </div>
 
             <div class="ls-3">

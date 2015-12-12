@@ -38,6 +38,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <a class="btn btn-primary" href="/site/signup">
                     Sign Up
                 </a>
+                <div style="margin-top:20px;font-size:12px;">
+                    <a href="/site/forgot">forgot your password?</a>
+                </div>
             </div>
         </div>
 

@@ -23,9 +23,21 @@ use yii\bootstrap\ActiveForm;
 
         <?= $form->field($model, 'description')->textArea(['rows' => '6']) ?>
 
-        <?= $form->field($model, 'start_datetime')->textInput(array('placeholder' => 'Start datetime yyyy-mm-dd'));  ?>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Start Datetime:</label>
+            <div class="col-lg-3">
+                <input type="date" value="<?=date('Y-m-d')?>" class="form-control" name="Jobs[start_datetime]">
+            </div>
+        </div>
 
-        <?= $form->field($model, 'end_datetime')->textInput(array('placeholder' => 'End datetime yyyy-mm-dd'));  ?>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">End Datetime:</label>
+            <div class="col-lg-3">
+                <input type="date" value="<?=date('Y-m-d')?>" class="form-control" name="User[dob]">
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-12">

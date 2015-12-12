@@ -30,15 +30,18 @@ $listSchoolData=ArrayHelper::map($schools,'id','fullname');
 
             <?= $form->field($model, 'lastname') ?>
 
-            <?= $form->field($uploadModel, 'imageFile')->fileInput() ?>
+            <?= $form->field($model, 'email') ?>
 
-            <?= $form->field($model, 'state')->dropDownList([
-                'ct' => 'CT'
-            ]) ?>
-
-             <?= $form->field($model, 'school')->dropDownList(
+            <?= $form->field($model, 'school')->dropDownList(
                 $listSchoolData
             ) ?>
+
+            <?= $form->field($model, 'type')->dropDownList([
+                    0 => 'Basic User',
+                    1 => 'Alumni User',
+                    2 => 'Admin User',
+                    3 => 'Super User'
+                ]) ?>
 
 
             <div class="form-group">

@@ -12,13 +12,6 @@ $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
-    <div id="map-canvas" style="height:500px;"></div>
-    <div id="save-widget" style="background-color: #fff;border: 1px solid #ccc;padding: 20px;opacity: 0.7;">
-       <strong>Fairfield, Connecticut, USA</strong>
-       <p>Ya.. This is my university.</p>
-     </div>
-
-
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
