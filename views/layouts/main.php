@@ -18,7 +18,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title>IGreekU</title>
 
     <?php 
         $this->registerJsFile('/js/scrollReveal.min.js', ['position' => \yii\web\View::POS_HEAD]);

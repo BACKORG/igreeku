@@ -18,6 +18,11 @@
                     <i class="fa fa-edit"></i>
                     Edit Profile
                 </a>
+                <br>
+                <a href="/user/password">
+                    <i class="fa fa-user-secret"></i>
+                    Change Password
+                </a>
             </div>
         </div>
     </div>

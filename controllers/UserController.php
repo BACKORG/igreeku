@@ -13,8 +13,14 @@ class UserController extends \yii\web\Controller
 
 
     public function actionAll(){
+        if(\Yii::$app->user->identity->type == 3){
+            $query = \app\Models\User::find();
+        }else{
+            $query = \app\Models\User::find()->where('type != :type', ['type' => 3]);
+        }
+
         $dataProvider = new ActiveDataProvider([
-            'query' => \app\Models\User::find(),
+            'query' => $query,
             'pagination' => [
                 'pageSize' => 3,
             ],
@@ -42,8 +48,25 @@ class UserController extends \yii\web\Controller
             $profile->save();
         }
 
+
+        if(\Yii::$app->user->identity->type == 3){
+            $userType = [
+                0 => 'Basic User',
+                1 => 'Alumni User',
+                2 => 'Admin User',
+                3 => 'Super User'
+            ];
+        }else{
+            $userType = [
+                0 => 'Basic User',
+                1 => 'Alumni User',
+                2 => 'Admin User',
+            ];
+        }
+
         return $this->render('update', [
             'model' => $profile,
+            'userType' => $userType
         ]);
     }
 
@@ -82,5 +105,28 @@ class UserController extends \yii\web\Controller
         $model->delete();
 
         $this->redirect('/user/all');
+    }
+
+    public function actionPassword(){
+        $id = \Yii::$app->user->identity->id;
+        $model = \app\Models\User::findOne($id);
+        $success = false;
+
+        if ( \Yii::$app->request->isPost ) {
+            $data = \Yii::$app->request->post();
+
+            $data['User']['password'] = md5($data['User']['password']);
+
+            $model->setAttributes( $data['User'] );
+            $model->save();
+
+            $success = true;
+        }
+
+        $model->password = '';
+        return $this->render('/user/password', [
+            'model' => $model,
+            'success' => $success
+        ]);
     }
 }

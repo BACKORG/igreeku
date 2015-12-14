@@ -18,14 +18,20 @@
 					<i class="fa fa-edit"></i>
 					Edit Profile
 				</a>
+				<br>
+				<a href="/user/password">
+					<i class="fa fa-user-secret"></i>
+					Change Password
+				</a>
 			</div>
 		</div>
 
-		<div class="well text-center">
-			<?php if(Yii::$app->user->identity->type !== 0){?>
+		
+		<?php if(Yii::$app->user->identity->type !== 0){?>
+			<div class="well text-center">
 				<button style="margin-right:10px;" class="btn btn-info" data-toggle="modal" data-target="#job_post">Add a Job</button>
-			<?php }?>
-		</div>
+			</div>
+		<?php }?>
 	</div>
 
 	<div class="col-md-6 clearfix">
@@ -53,6 +59,15 @@
 			  		</li>
 			  	</ul>
 		  	</div>
+		  	<?php }else if(Yii::$app->user->identity->type == 2){ ?>
+		  	  	<div class="well clearfix">
+		  		  	<h5 class="ald"><i class="fa fa-cog"></i> IGreekU Admin</h5>
+		  		  	<ul>
+		  		  		<li>
+		  		  			<a href="/user/all">Manage Alumni Users</a>
+		  		  		</li>
+		  		  	</ul>
+		  	  	</div>
 		  	<?php }?>
 
 		  	<div class="well clearfix">
