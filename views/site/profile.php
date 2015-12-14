@@ -20,6 +20,12 @@
 				</a>
 			</div>
 		</div>
+
+		<div class="well text-center">
+			<?php if(Yii::$app->user->identity->type !== 0){?>
+				<button style="margin-right:10px;" class="btn btn-info" data-toggle="modal" data-target="#job_post">Add a Job</button>
+			<?php }?>
+		</div>
 	</div>
 
 	<div class="col-md-6 clearfix">
@@ -27,9 +33,6 @@
 			<div class="ms-1 clearfix">
 				<textarea class="form-control messages" rows="1" placeholder="Write Your Post ..."></textarea>
 				<button type="button" class="btn btn-info pull-right" onclick="postMessage(event);">Post</button>
-				<?php if(Yii::$app->user->identity->type !== 0){?>
-					<button style="margin-right:10px;" class="btn btn-info pull-right" data-toggle="modal" data-target="#job_post">Add a Job</button>
-				<?php }?>
 			</div>		
 			<?=$postString?>
 		</div>
@@ -110,6 +113,8 @@
 					<?= $form->field($Jobmodel, 'title') ?>
 
 					<?= $form->field($Jobmodel, 'description')->textArea(['rows' => '6']) ?>
+
+					<?= $form->field($Jobmodel, 'link') ?>
 
 					<div class="form-group">
 					    <label class="col-lg-3 control-label">Job Posted On:</label>

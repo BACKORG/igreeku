@@ -55,10 +55,11 @@ CREATE TABLE `jobs` (
   `user_id` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `description` text,
+  `link` varchar(255) DEFAULT NULL,
   `start_datetime` datetime DEFAULT NULL,
   `end_datetime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +68,7 @@ CREATE TABLE `jobs` (
 
 LOCK TABLES `jobs` WRITE;
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-INSERT INTO `jobs` VALUES (1,10,'This is a job post 1','This is a job post 1','2015-11-01 00:00:00','2015-11-20 00:00:00'),(2,10,'This is a new job lol','This is a new job lol','2015-11-01 00:00:00','2015-11-20 00:00:00');
+INSERT INTO `jobs` VALUES (1,10,'This is a job post 1','This is a job post 1',NULL,'2015-11-01 00:00:00','2015-11-20 00:00:00'),(2,10,'This is a new job lol','This is a new job lol',NULL,'2015-11-01 00:00:00','2015-11-20 00:00:00'),(3,13,'sdasd','asdasdasd',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(4,13,'asd','asdasasdsa',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(5,13,'asd','asd',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(6,13,'asd','asd',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(7,13,'asd','asd',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(10,13,'sdasd','sasadsdassd',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(11,13,'asd asd as','asdasdasd',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(12,13,'asdasd','asdasdasd',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(13,13,'asdasdsads','adsad1',NULL,'2015-12-13 00:00:00','2015-12-13 00:00:00'),(14,13,'asdasdsads','adsad1','223121212','2015-12-13 00:00:00','2015-12-13 00:00:00'),(15,13,'googlejob','googjob','https://www.google.com/','2015-12-13 00:00:00','2015-12-13 00:00:00');
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +87,7 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`id`),
   KEY `post_user_id_idx` (`user_id`),
   CONSTRAINT `post_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +96,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,10,'LOL This is my first post','2015-11-10 00:36:41'),(2,10,'LOL This is my second post','2015-11-10 00:36:51'),(3,10,'This is my third post','2015-11-09 18:38:24'),(7,13,'HSHA','2015-12-12 00:09:37');
+INSERT INTO `posts` VALUES (1,10,'LOL This is my first post','2015-11-10 00:36:41'),(2,10,'LOL This is my second post','2015-11-10 00:36:51'),(3,10,'This is my third post','2015-11-09 18:38:24'),(9,13,'asdasdsa','2015-12-13 22:05:48');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,4 +169,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-12  1:17:36
+-- Dump completed on 2015-12-13 22:12:43

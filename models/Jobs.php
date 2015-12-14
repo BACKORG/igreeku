@@ -24,7 +24,7 @@ class Jobs extends \yii\db\ActiveRecord
     public function scenarios()
     {
         return [
-            self::SCENARIO_DEFAULT => ['user_id', 'title', 'description', 'start_datetime', 'end_datetime'],
+            self::SCENARIO_DEFAULT => ['user_id', 'title', 'description', 'start_datetime', 'end_datetime', 'link'],
             self::SCENARIO_CREATE => ['*'],
             self::SCENARIO_UPDATE => ['*']
         ];
@@ -47,7 +47,7 @@ class Jobs extends \yii\db\ActiveRecord
         return [
             [['user_id'], 'integer'],
             [['start_datetime', 'end_datetime'], 'safe'],
-            [['title'], 'string', 'max' => 255]
+            [['title', 'link'], 'string', 'max' => 255]
         ];
     }
 
@@ -61,6 +61,7 @@ class Jobs extends \yii\db\ActiveRecord
             'user_id' => 'User ID',
             'title' => 'Title',
             'description' => 'Description',
+            'link' => 'Job Link',
             'start_datetime' => 'Start Datetime',
             'end_datetime' => 'End Datetime',
         ];

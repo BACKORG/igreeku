@@ -17,5 +17,15 @@
         <div>
             <?=$post['message']?>
         </div>
+
+        <div class="text-right">
+            <a href="/post/edit?id=<?=$post['id']?>" title="Edit" style="margin-right:15px;">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+
+            <a href="/post/delete?id=<?=$post['id']?>" title="Delete">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a>
+        </div>
     </div>
 </div>

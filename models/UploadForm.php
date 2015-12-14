@@ -17,7 +17,7 @@ class UploadForm extends Model
     public function attributeLabels()
     {
         return [
-            'imageFile' => 'Photo File',
+            'imageFile' => 'Profile Photo',
         ];
     }
 

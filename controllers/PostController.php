@@ -55,4 +55,28 @@ class PostController extends \yii\web\Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    public function actionDelete($id){
+        $model = \app\Models\Posts::findOne($id);
+        $model->delete();
+
+        $this->redirect('/site/profile');
+    }
+
+    public function actionEdit($id){
+        $model = \app\Models\Posts::findOne($id);
+
+        if ( \Yii::$app->request->isPost ) {
+            $data = \Yii::$app->request->post();
+
+            $model->setAttributes( $data['Posts'] );
+            $model->save();
+
+            $this->redirect('/site/profile');
+        }
+        
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
 }
